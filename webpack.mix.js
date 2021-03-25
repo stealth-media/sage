@@ -13,28 +13,28 @@ require('@tinypixelco/laravel-mix-wp-blocks');
  */
 
 mix
-  .setPublicPath('./public')
-  .browserSync('sage.test');
+.setPublicPath('./public')
+.browserSync('sage.test');
 
 mix
-  .sass('resources/styles/app.scss', 'styles')
-  .sass('resources/styles/editor.scss', 'styles')
-  .options({
-    processCssUrls: false,
-    postCss: [require('tailwindcss')],
-  });
+.sass('resources/styles/app.scss', 'styles')
+.sass('resources/styles/editor.scss', 'styles')
+.options({
+  processCssUrls: false,
+  postCss: [require('tailwindcss')],
+});
 
 mix
-  .js('resources/scripts/app.js', 'scripts')
-  .js('resources/scripts/customizer.js', 'scripts')
-  .blocks('resources/scripts/editor.js', 'scripts')
-  .autoload({ jquery: ['$', 'window.jQuery'] })
-  .extract();
+.js('resources/scripts/app.js', 'scripts')
+.js('resources/scripts/customizer.js', 'scripts')
+.blocks('resources/scripts/editor.js', 'scripts')
+.autoload({jquery: ['$', 'window.jQuery']})
+.extract();
 
 mix
-  .copyDirectory('resources/images', 'public/images')
-  .copyDirectory('resources/fonts', 'public/fonts');
+.copyDirectory('resources/images', 'public/images')
+.copyDirectory('resources/fonts', 'public/fonts');
 
 mix
-  .sourceMaps()
-  .version();
+.sourceMaps()
+.version();

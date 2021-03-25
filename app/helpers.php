@@ -1,7 +1,7 @@
 <?php
 
-/**
- * Theme helpers.
- */
+    /**
+     * Theme helpers.
+     */
 
-namespace App;
+    namespace App;

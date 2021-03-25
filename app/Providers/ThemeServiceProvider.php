@@ -1,28 +1,26 @@
 <?php
 
-namespace App\Providers;
+    namespace App\Providers;
 
-use Roots\Acorn\ServiceProvider;
+    use Roots\Acorn\ServiceProvider;
 
-class ThemeServiceProvider extends ServiceProvider
-{
-    /**
-     * Register any application services.
-     *
-     * @return void
-     */
-    public function register()
+    class ThemeServiceProvider extends ServiceProvider
     {
-        //
-    }
+        /**
+         * Register any application services.
+         *
+         * @return void
+         */
+        public function register() {
+            //
+        }
 
-    /**
-     * Bootstrap any application services.
-     *
-     * @return void
-     */
-    public function boot()
-    {
-        //
+        /**
+         * Bootstrap any application services.
+         *
+         * @return void
+         */
+        public function boot() {
+            //
+        }
     }
-}
