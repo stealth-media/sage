@@ -18,8 +18,7 @@ mix
 
 mix
 .sass('resources/sass/app.scss', 'styles')
-.sass('resources/sass/editor.scss', 'styles')
-.less('resources/less/main.less', 'styles')
+// .less('resources/less/app.less', 'styles')
 .options({
   processCssUrls: false,
   postCss: [require('tailwindcss')],

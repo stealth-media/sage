@@ -68,6 +68,9 @@
         register_nav_menus([
             'primary_navigation' => __('Primary Navigation', 'sage'),
         ]);
+        register_nav_menus([
+            'mobile' => __('Mobile Navigation', 'sage'),
+        ]);
 
         /**
          * Register the editor color palette.

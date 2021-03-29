@@ -22,7 +22,7 @@ function windowLoad() {
         // loader = requestAnimationFrame(animateLoaderScript);
     }
     $(window).load(function () {
-        $(".se-pre-con").fadeOut("slow");
+        $(".page-loader").fadeOut("slow");
         $("body").removeClass("preload");
     });
 }
