@@ -1,0 +1,52 @@
+/***********************************************************************/
+/*********** 404 *******************************************************/
+/***********************************************************************/
+.error404 {
+    display: block;
+    width: 100%;
+    height: 100vh;
+    min-height: auto;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+
+    .overlay {
+        width: 100%;
+        height: 100%;
+        background-color: fade(@secondary-color, 20%);
+        position: relative;
+        text-align: center;
+        .row {
+            height: 100vh;
+        }
+    }
+
+    h1 {
+        position: absolute;
+        bottom: 20px;
+        left: 0px;
+        width: 100%;
+        .font-size(175px);
+        line-height: 100px;
+        color: @text-color-light;
+        opacity: 0.3;
+        text-align: center;
+        font-family: @font-heading;
+        .weight-bold();
+
+        span {
+            .font-size(350);
+            line-height: 100px;
+        }
+    }
+
+    p {
+        color: @white;
+        .font-size(24);
+        text-align: center;
+        font-family: @font-text;
+        font-weight: @weight-normal;
+        margin-bottom: @baseline*2;
+    }
+}

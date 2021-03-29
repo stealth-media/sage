@@ -1,0 +1,181 @@
+/***********************************************************************/
+/* STYLES
+/*
+/* Classes that perform specific css styles. Add class to element to style
+/***********************************************************************/
+
+/* Miscellaneous */
+.hidden { display: none !important; }
+
+.visible { visibility: visible !important; }
+
+.invisible { visibility: hidden !important; }
+
+.small {.font-size(12);}
+
+.no-padding {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.container-white {
+  background-color: @white;
+}
+.color-white {
+  color: @white!important;
+}
+.color-primary {
+  color: @primary-color!important;
+}
+.color-secondary {
+  color: @secondary-color!important;
+}
+
+/* Display Overrides */
+.uppercase { text-transform: uppercase; }
+
+.lowercase { text-transform: lowercase; }
+
+.capitalize { text-transform: capitalize; }
+
+.bold {.weight-bold();}
+
+/* Fonts */
+.font-heading { font-family: @font-heading; }
+
+.font-text { font-family: @font-text; }
+
+.font-awesome { font-family: @font-awesome; }
+
+.underline {
+    text-decoration: underline;
+}
+
+.success {
+    color: @success-color;
+}
+
+.danger {
+    color: @red-dark;
+}
+
+
+/* Clearfix Method */
+.clearfix::after {
+  content: " ";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+
+.mb-auto, .my-auto { margin-bottom: auto!important; }
+.mb-0, .my-0 { margin-bottom: @bl*0!important; }
+.mb-1, .my-1 { margin-bottom: @bl*1!important; }
+.mb-2, .my-2 { margin-bottom: @bl*2!important; }
+.mb-3, .my-3 { margin-bottom: @bl*3!important; }
+.mb-4, .my-4 { margin-bottom: @bl*4!important; }
+
+.mt-auto, .my-auto { margin-top: auto!important; }
+.mt-0, .my-0 { margin-top: @bl*0!important; }
+.mt-1, .my-1 { margin-top: @bl*1!important; }
+.mt-2, .my-2 { margin-top: @bl*2!important; }
+.mt-3, .my-3 { margin-top: @bl*3!important; }
+.mt-4, .my-4 { margin-top: @bl*4!important; }
+
+.ml-auto, .mx-auto { margin-left: auto!important; }
+.ml-0, .mx-0 { margin-left: @bl*0!important; }
+.ml-1, .mx-1 { margin-left: @bl*1!important; }
+.ml-2, .mx-2 { margin-left: @bl*2!important; }
+.ml-3, .mx-3 { margin-left: @bl*3!important; }
+.ml-4, .mx-4 { margin-left: @bl*4!important; }
+
+.mr-auto, .mx-auto { margin-right: auto!important; }
+.mr-0, .mx-0 { margin-right: @bl*0!important; }
+.mr-1, .mx-1 { margin-right: @bl*1!important; }
+.mr-2, .mx-2 { margin-right: @bl*2!important; }
+.mr-3, .mx-3 { margin-right: @bl*3!important; }
+.mr-4, .mx-4 { margin-right: @bl*4!important; }
+
+.pb-0, .py-0 { padding-bottom: @bl*0!important; }
+.pb-1, .py-1 { padding-bottom: @bl*1!important; }
+.pb-2, .py-2 { padding-bottom: @bl*2!important; }
+.pb-3, .py-3 { padding-bottom: @bl*3!important; }
+.pb-4, .py-4 { padding-bottom: @bl*4!important; }
+
+.pt-0, .py-0 { padding-top: @bl*0!important; }
+.pt-1, .py-1 { padding-top: @bl*1!important; }
+.pt-2, .py-2 { padding-top: @bl*2!important; }
+.pt-3, .py-3 { padding-top: @bl*3!important; }
+.pt-4, .py-4 { padding-top: @bl*4!important; }
+
+.pl-0, .px-0 { padding-left: @bl*0!important; }
+.pl-1, .px-1 { padding-left: @bl*1!important; }
+.pl-2, .px-2 { padding-left: @bl*2!important; }
+.pl-3, .px-3 { padding-left: @bl*3!important; }
+.pl-4, .px-4 { padding-left: @bl*4!important; }
+
+.pr-0, .px-0 { padding-right: @bl*0!important; }
+.pr-1, .px-1 { padding-right: @bl*1!important; }
+.pr-2, .px-2 { padding-right: @bl*2!important; }
+.pr-3, .px-3 { padding-right: @bl*3!important; }
+.pr-4, .px-4 { padding-right: @bl*4!important; }
+
+.text-left {
+    text-align: left !important;
+}
+
+.text-right {
+    text-align: right !important;
+}
+
+.text-center {
+    text-align: center !important;
+}
+@media (min-width: 576px) {
+    .text-sm-left {
+        text-align: left !important;
+    }
+    .text-sm-right {
+        text-align: right !important;
+    }
+    .text-sm-center {
+        text-align: center !important;
+    }
+}
+
+@media (min-width: 768px) {
+    .text-md-left {
+        text-align: left !important;
+    }
+    .text-md-right {
+        text-align: right !important;
+    }
+    .text-md-center {
+        text-align: center !important;
+    }
+}
+
+@media (min-width: 992px) {
+    .text-lg-left {
+        text-align: left !important;
+    }
+    .text-lg-right {
+        text-align: right !important;
+    }
+    .text-lg-center {
+        text-align: center !important;
+    }
+}
+
+@media (min-width: 1200px) {
+    .text-xl-left {
+        text-align: left !important;
+    }
+    .text-xl-right {
+        text-align: right !important;
+    }
+    .text-xl-center {
+        text-align: center !important;
+    }
+}

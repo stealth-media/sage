@@ -17,8 +17,9 @@ mix
 .browserSync('sage.test');
 
 mix
-.sass('resources/styles/app.scss', 'styles')
-.sass('resources/styles/editor.scss', 'styles')
+.sass('resources/sass/app.scss', 'styles')
+.sass('resources/sass/editor.scss', 'styles')
+.less('resources/less/main.less', 'styles')
 .options({
   processCssUrls: false,
   postCss: [require('tailwindcss')],

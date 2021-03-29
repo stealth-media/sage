@@ -1,0 +1,89 @@
+/***********************************************************************/
+/*** SEARCH OVERLAY ****************************************************/
+/***********************************************************************/
+.search-overlay {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    display: none;
+    background-color: rgba(255, 255, 255, 0.9);
+    z-index: 999;
+    left: 0px;
+    top: 0px;
+
+    .search-container {
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+    }
+
+    .close {
+        background-color: transparent !important;
+        border: none !important;
+        padding: 0px;
+        margin: 0px;
+        line-height: 30px;
+        .font-size(30);
+        color: @primary-color;
+        position: fixed;
+        top: @baseline;
+        right: @baseline;
+    }
+
+    .menu-search-form {
+        position: absolute;
+        top: 50%;
+        width: 100%;
+        height: auto;
+        margin-top: -40px;
+
+        .form-search-btn {
+            background-color: transparent;
+            border: none;
+            color: @primary-color;
+            .font-size(48);
+            width: 50px;
+            height: 50px;
+            line-height: 50px;
+            display: none;
+        }
+
+        .form-search-input {
+            background: transparent;
+            border: none;
+            color: @text-color-dark;
+            .font-size(58);
+            height: 80px;
+            line-height: 80px;
+            width: 100%;
+            max-width: 900px;
+            display: inline-block;
+            text-align: center !important;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 10px;
+        }
+    }
+}
+
+
+/***********************************************************************/
+/*********** SEARCH RESULTS ********************************************/
+/***********************************************************************/
+
+.post-content {
+    .section-padding();
+    .full-width();
+    background: @white;
+
+    article {
+        padding: @baseline*2 0;
+        border-bottom: 1px solid @secondary-color;
+    }
+}
+
+.search-link {
+    margin-bottom: @baseline;
+}
