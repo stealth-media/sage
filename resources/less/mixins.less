@@ -160,53 +160,49 @@
 /* ##########################
 breakpoints
 ########################## */
-.breakpoint(desktop; @content) {
-    @media (min-width: 70em) { @content();
-    }
+.b(desktop; @content) {
+    @media (min-width: 70em) { @content(); }
 }
-
-.breakpoint(laptop; @content) {
-    @media (max-width: 1350px) { @content();
-    }
+.b(laptop; @content) {
+    @media (max-width: 1350px) { @content(); }
 }
-
-.breakpoint(tablet; @content) {
-    @media (max-width: 1023px) { @content();
-    }
+.b(tablet; @content) {
+    @media (max-width: 1023px) { @content(); }
 }
-
-.breakpoint(phablet; @content) {
-    @media (min-width: 37.5em) { @content();
-    }
+.b(phablet; @content) {
+    @media (min-width: 37.5em) { @content(); }
 }
-
-.breakpoint(mobile; @content) {
-    @media (max-width: 767px) { @content();
-    }
+.b(mobile; @content) {
+    @media (max-width: 767px) { @content(); }
 }
-
-.breakpoint(tiny; @content) {
-    @media (max-width: 320px) { @content();
-    }
+.b(tiny; @content) {
+    @media (max-width: 320px) { @content(); }
 }
-
 /* BOOTSTRAP GRID */
-.breakpoint(lg; @content) {
-    @media (max-width: 1199.98px) { @content();
-    }
+.b(mobile-menu; @content) {
+    @media (max-width: 1065.98px) { @content(); }
 }
 
-.breakpoint(md; @content) {
-    @media (max-width: 991.98px) { @content();
-    }
+.b(xl; @content) {
+    @media (max-width: 1399.98px) { @content(); }
 }
 
-.breakpoint(sm; @content) {
-    @media (max-width: 767.98px) { @content();
-    }
+// Large devices (desktops, 992px and up)
+.b(lg; @content) {
+    @media (max-width: 1199.98px) { @content(); }
 }
 
-.breakpoint(xs; @content) {
-    @media (max-width: 575.98px) { @content();
-    }
+// Medium devices (tablets, 768px and up)
+.b(md; @content) {
+    @media (max-width: 991.98px) { @content(); }
+}
+
+// Small devices (landscape phones, 576px and up)
+.b(sm; @content) {
+    @media (max-width: 767.98px)  { @content(); }
+}
+
+// Extra small devices (portrait phones, less than 576px)
+.b(xs; @content) {
+    @media (max-width: 575.98px)  { @content(); }
 }
