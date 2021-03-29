@@ -6,19 +6,12 @@
   <a href="https://roots.io">Official Website</a> | <a href="https://roots.io/docs/sage/">Documentation</a> | <a href="CHANGELOG.md">Change Log</a>
 </p>
 
-## Supporting
-
-**Sage** is an open source project and completely free to use.
-
-However, the amount of effort needed to maintain and develop new features and products within the Roots ecosystem is not sustainable without proper financial backing. If you have the capability, please consider donating using the links below:
-
-<div align="center">
-
-[![Sponsor on GitHub](https://img.shields.io/static/v1?label=sponsor&message=%E2%9D%A4&logo=GitHub)](https://github.com/sponsors/roots)
-[![Sponsor on Patreon](https://img.shields.io/badge/sponsor-patreon-orange.svg?style=flat-square&logo=patreon")](https://www.patreon.com/rootsdev)
-[![Donate via PayPal](https://img.shields.io/badge/donate-paypal-blue.svg?style=flat-square&logo=paypal)](https://www.paypal.me/rootsdev)
-
-</div>
+## Stealth Boilerplate Notes
+- Choose which css pre-processor you would like to use in `webpack.mix.js`
+- Find/Add JavaScript snippet @ `resources/scripts/snippets.js`
+- This Boilerplate has removed the original Sage code from `index.php` and has placed the `<head>` in `resources/views/layouts/header.blade.php` and closing `</body>` in `resources/views/layouts/footer.blade.php`
+- This Boilerplate has been set up with a working mobile nav. Slideout js has been included for use in mobile nav. Find HTML @ `resources/views/partials/mobile-menu.blade.php` which has been included in `resources/views/layouts/header.blade.php`, CSS @ `resources/less/components/mobile-menu.less` and JS to handle slide out and nav buttons @ `resources/scripts/app.js` `mobileMenu()`
+- If using less, start with editing the `variables.less` file. The bootstrap grid is applied and can be found at `resources/less/bootstrap/grid.less`. To enable bootstrap css, uncomment "bootstrap.less" from `app.less`
 
 ## About Sage
 
