@@ -7,11 +7,14 @@
 </p>
 
 ## Stealth Boilerplate Notes
-- Choose which css pre-processor you would like to use in `webpack.mix.js`
-- Find/Add JavaScript snippet @ `resources/scripts/snippets.js`
-- This Boilerplate has removed the original Sage code from `index.php` and has placed the `<head>` in `resources/views/layouts/header.blade.php` and closing `</body>` in `resources/views/layouts/footer.blade.php`
-- This Boilerplate has been set up with a working mobile nav. Slideout js has been included for use in mobile nav. Find HTML @ `resources/views/partials/mobile-menu.blade.php` which has been included in `resources/views/layouts/header.blade.php`, CSS @ `resources/less/components/mobile-menu.less` and JS to handle slide out and nav buttons @ `resources/scripts/app.js` `mobileMenu()`
+- Choose which css pre-processor you would like to use in `webpack.mix.js`. Both SASS (default) and LESS available.
 - If using less, start with editing the `variables.less` file. The bootstrap grid is applied and can be found at `resources/less/bootstrap/grid.less`. To enable bootstrap css, uncomment "bootstrap.less" from `app.less`
+- This Boilerplate has removed the original Sage code from `index.php` and has placed the `<head>` in `resources/views/layouts/header.blade.php` and closing `</body>` in `resources/views/layouts/footer.blade.php`
+- Find JavaScript snippet @ `resources/scripts/snippets.js` (use `app.js` for main js scripts)
+- This Boilerplate has been set up with a working mobile nav. Slideout js has been included for use in mobile nav. 
+    - Find HTML @ `resources/views/partials/mobile-menu.blade.php` which has been included in `resources/views/layouts/header.blade.php`, 
+    - CSS @ `resources/less/components/mobile-menu.less`
+    - JS to handle slide out and nav buttons @ `resources/scripts/app.js` `mobileMenu()`
 
 ## About Sage
 
@@ -116,23 +119,3 @@ Edit `app/setup.php` to enable or disable theme features, setup navigation menus
 ## Documentation
 
 - [Sage documentation](https://roots.io/sage/docs/)
-
-## Contributing
-
-Contributions are welcome from everyone. We have [contributing guidelines](https://github.com/roots/guidelines/blob/master/CONTRIBUTING.md) to help you get started.
-
-## Sage sponsors
-
-Help support our open-source development efforts by [becoming a sponsor](https://github.com/sponsors/roots).
-
-<a href="https://kinsta.com/?kaid=OFDHAJIXUDIV"><img src="https://cdn.roots.io/app/uploads/kinsta.svg" alt="Kinsta" width="200" height="150"></a> <a href="https://k-m.com/"><img src="https://cdn.roots.io/app/uploads/km-digital.svg" alt="KM Digital" width="200" height="150"></a> <a href="https://carrot.com/"><img src="https://cdn.roots.io/app/uploads/carrot.svg" alt="Carrot" width="200" height="150"></a> <a href="https://www.c21redwood.com/"><img src="https://cdn.roots.io/app/uploads/c21redwood.svg" alt="C21 Redwood Realty" width="200" height="150"></a> <a href="https://wordpress.com/"><img src="https://cdn.roots.io/app/uploads/wordpress.svg" alt="WordPress.com" width="200" height="150"></a> <a href="https://icons8.com/"><img src="https://cdn.roots.io/app/uploads/icons8.svg" alt="Icons8" width="200" height="150"></a> <a href="https://www.harnessup.com/"><img src="https://cdn.roots.io/app/uploads/harness-software.svg" alt="Harness Software" width="200" height="150"></a> <a href="https://www.codersclan.com/"><img src="https://cdn.roots.io/app/uploads/coders-clan.svg" alt="Coders Clan" width="200" height="150"></a> <a href="https://generodigital.com/"><img src="https://cdn.roots.io/app/uploads/genero.svg" alt="Genero" width="200" height="150"></a>
-
-## Community
-
-Keep track of development and community news.
-
-- Participate on the [Roots Discourse](https://discourse.roots.io/)
-- Follow [@rootswp on Twitter](https://twitter.com/rootswp)
-- Read and subscribe to the [Roots Blog](https://roots.io/blog/)
-- Subscribe to the [Roots Newsletter](https://roots.io/subscribe/)
-- Listen to the [Roots Radio podcast](https://roots.io/podcast/)
