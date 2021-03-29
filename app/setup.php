@@ -39,7 +39,7 @@
             wp_add_inline_script('sage/vendor.js', asset('scripts/manifest.js')->contents(), 'before');
         }
 
-        wp_enqueue_style('sage/editor.css', asset('styles/editor.css')->uri(), false, null);
+        // wp_enqueue_style('sage/editor.css', asset('styles/editor.css')->uri(), false, null);
     }, 100);
 
     /**

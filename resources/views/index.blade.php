@@ -12,7 +12,7 @@
   @endif
 
   @while(have_posts()) @php(the_post())
-  @includeFirst(['partials.content-' . get_post_type(), 'partials.content'])
+  @includeFirst(['content.content-' . get_post_type(), 'content.content'])
   @endwhile
 
   {!! get_the_posts_navigation() !!}

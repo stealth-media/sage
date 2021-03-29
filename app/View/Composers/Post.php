@@ -13,8 +13,8 @@
          */
         protected static $views = [
             'partials.page-header',
-            'partials.content',
-            'partials.content-*',
+            'content.content',
+            'content.content-*',
         ];
 
         /**
