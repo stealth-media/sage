@@ -1,8 +1,12 @@
 /***********************************************************************/
 /* TYPOGRAPHY
-/*
-/* Styles for <h1>-<h6>, <p> , <hr> etc
 /***********************************************************************/
+
+/********** Text Select Color ******************************************/
+::selection, ::-moz-selection {
+    color: @white;
+    background: @primary-color; /* WebKit/Blink Browsers */
+}
 
 body {
   font-family: @font-text;

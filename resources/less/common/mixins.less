@@ -9,9 +9,9 @@
 
 .weight-bold() {font-weight: @weight-bold;}
 
-.weight-thin() {font-weight: @weight-thin;}
-
 .weight-normal() {font-weight: normal;}
+
+.weight-thin() {font-weight: @weight-thin;}
 
 .text-center() {text-align: center;}
 
@@ -20,6 +20,8 @@
 .text-right() {text-align: right;}
 
 .text-uppercase() {text-transform: uppercase;}
+
+.text-capitalize() {text-transform: capitalize;}
 
 .text-normal() {text-transform: none;}
 
@@ -33,11 +35,11 @@
 }
 
 /* Apply a background image to an element */
-.background-image(@url) {
+.background-image(@url, @size: cover, @position: center, @repeat: no-repeat) {
     background-image: url(@url);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+    background-size: @size;
+    background-position: @position;
+    background-repeat: @repeat;
 }
 
 /* Adapt Pixel Font Sizes To ems */

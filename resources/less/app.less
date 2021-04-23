@@ -1,39 +1,54 @@
 // This is optional if you're using SCSS
+/** Import everything from autoload */
+@import "./autoload/**/*";
 
-// BOOTSTRAP =========================================\
-@import "bootstrap/grid";
+// BOOTSTRAP ------------------------------------------\
+@import "common/bootstrap/grid";
 //@import "bootstrap/bootstrap";
 
-// FONTAWESOME ========================================\
+// FONTAWESOME ----------------------------------------\
 @import "../../node_modules/@fortawesome/fontawesome-free/less/fontawesome.less";
 @import "../../node_modules/@fortawesome/fontawesome-free/less/solid.less";
 @import "../../node_modules/@fortawesome/fontawesome-free/less/brands.less";
-@import "fontawesome";
+@import "common/fontawesome";
 
 
 // MAIN THEME FILES ===================================\
-@import "resets.less";
-@import "variables";
-@import "mixins.less";
-@import "styles";
-@import "animations";
-@import "typography";
-@import "ui";
-@import "response";
+@import "common/resets.less";
+@import "common/variables";
+@import "common/mixins.less";
+@import "common/styles";
+@import "common/animations";
+@import "common/typography";
+@import "common/global";
+@import "common/response";
 
-// COMPONENTS =========================================\
+// LAYOUTS ============================================\
+@import "layouts/header";
+@import "layouts/footer";
+@import "layouts/mobile-menu";
+@import "layouts/search";
+@import "layouts/sidebar";
+
+// COMPONENTS *****************************************\
 @import "components/hamburger";
-@import "components/search";
-@import "components/nav";
-@import "components/mobile-menu";
-@import "components/sidebar";
-@import "components/footer";
+@import "components/buttons";
+@import "components/forms";
+@import "components/pagination";
+@import "components/tables";
 
 // PAGES =============================================\
-@import "pages/contact";
-@import "pages/login";
-@import "pages/error404";
-@import "pages/home";
+@import "layouts/pages/contact";
+@import "layouts/pages/login";
+@import "layouts/pages/error404";
+@import "layouts/pages/home";
 
+//@import "common/woocommerce";
 
-//@import "woocommerce";
+/**
+ * Import npm dependencies
+ *
+ * Prefix your imports with `~` to grab from node_modules/
+ * @see https://github.com/webpack-contrib/sass-loader#imports
+ */
+// @import "~some-node-module";
