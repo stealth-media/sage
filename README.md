@@ -108,7 +108,7 @@ themes/your-theme-name/   # → Root of your Sage based theme
 Edit `app/setup.php` to enable or disable theme features, setup navigation menus, post thumbnail sizes, and sidebars.
 
 ## Theme development
-
+- Run `npm install --global yarn` to install yarn on your machine. (If you do not have it already)
 - Run `yarn` from the theme directory to install dependencies
 - Update `webpack.mix.js` with your local dev URL
 
