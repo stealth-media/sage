@@ -8,12 +8,12 @@
 
 ## Stealth Boilerplate Notes
 - Choose which css pre-processor you would like to use in `webpack.mix.js`. Both SASS (default) and LESS available.
-- If using less, start with editing the `variables.less` file. The bootstrap grid is applied and can be found at `resources/less/bootstrap/grid.less`. To enable bootstrap css, uncomment "bootstrap.less" from `app.less`
+- If using less, start with editing the `variables.less` file. The bootstrap grid is applied and can be found at `resources/less/common/bootstrap/grid.less`. To enable bootstrap css, uncomment "bootstrap.less" from `app.less`
 - This Boilerplate has removed the original Sage code from `index.php` and has placed the `<head>` in `resources/views/layouts/header.blade.php` and closing `</body>` in `resources/views/layouts/footer.blade.php`
 - Find JavaScript snippet @ `resources/scripts/snippets.js` (use `app.js` for main js scripts)
 - This Boilerplate has been set up with a working mobile nav. Slideout js has been included for use in mobile nav. 
     - Find HTML @ `resources/views/partials/mobile-menu.blade.php` which has been included in `resources/views/layouts/header.blade.php`, 
-    - CSS @ `resources/less/components/mobile-menu.less`
+    - CSS @ `resources/less/layouts/mobile-menu.less`
     - JS to handle slide out and nav buttons @ `resources/scripts/app.js` `mobileMenu()`
 
 ## About Sage
@@ -87,8 +87,10 @@ themes/your-theme-name/   # → Root of your Sage based theme
 ├── resources/            # → Theme assets and templates
 │   ├── fonts/            # → Theme fonts
 │   ├── images/           # → Theme images
-│   ├── scripts/               # → Theme javascript
-│   ├── styles/              # → Theme stylesheets
+│   ├── scripts/          # → Theme javascript
+│   ├── less/             # → Theme less styles
+│   ├── sass/             # → Theme sass styles
+│   ├── styles/           # → Theme stylesheets
 │   └── views/            # → Theme templates
 │       ├── components/   # → Component templates
 │       ├── form/         # → Form templates
