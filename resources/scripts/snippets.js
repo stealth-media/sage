@@ -236,3 +236,16 @@ function fileInputLabel(){
         $(this).next('.custom-file-label').html(files.join(', '));
     });
 }
+
+/*
+ * Smooth scroll to target element when clicking <a>
+ */
+function smoothScrollTo(){
+    $(document).on('click', 'a[href^="#"]', function (event) {
+        event.preventDefault();
+
+        $('html, body').animate({
+            scrollTop: $($.attr(this, 'href')).offset().top - 120 // Height of header
+        }, 500);
+    });
+}
