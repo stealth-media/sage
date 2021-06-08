@@ -29,3 +29,21 @@
     */
 
     require_once __DIR__ . '/bootstrap/app.php';
+
+
+    /**
+     *
+     * Function to return Image src data-set
+     *
+     * @param $image Image array
+     * @param string $size it can be thumbnail, full etc
+     * @param string $alt alt-tag value
+     * @param string $class custom class name
+     * @param bool $is_echo true/false
+     * @return string echo to page if is_echo is true other wise return string
+     *
+     * USAGE: {!! the_image(get_field('my-image'), 'my-class', 'full') !!}
+     */
+    function the_image($image, $class = '', $size = 'full') {
+        echo wp_get_attachment_image($image['ID'], $size, '', array('alt' => $image['alt'], 'class' => $class));
+    }

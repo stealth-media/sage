@@ -9,6 +9,12 @@ $(document).ready(() => {
     mobileMenu();
     scroller();
     animateOnScroll();
+
+    // Run script on specific page
+    // var url_pathname = window.location.pathname;
+    // if (url_pathname == "/page-name/") {
+        // yourScript();
+    // }
 });
 
 /*
@@ -62,8 +68,6 @@ function mobileMenu() {
         'touch': false,
         'duration': 200,
     });
-    console.log('here 1');
-
 
     mobileMenuBtn.addEventListener('click', function () {
         console.log('here');

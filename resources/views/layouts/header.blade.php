@@ -25,11 +25,11 @@
 
 <div id="app">
     <!-- PAGE LOADER -->
-    @include('partials.page-loader')
+@include('partials.page-loader')
 
-    <!-- MOBILE NAV -->
+<!-- MOBILE NAV -->
     @include('partials.mobile-menu')
 
     @include('partials.nav')
-{{--        @include('partials.mega-nav')--}}
+    {{--        @include('partials.mega-nav')--}}
     <main id="panel"><!-- Needed for mobile menu. This is what slides when you click mobile menu button -->

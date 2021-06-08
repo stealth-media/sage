@@ -82,10 +82,14 @@ Example: We can set my-component's `$foo` variable as `$bar`
 - We commonly use Advanced Custom Fields Pro. Fields can be grabbed easily using this syntax `@php($foo = get_field('foo'))`
 - To see the contents / array of the above `$foo` you can use `@dd()` ie. `@dd($foo)`. This will print the `$foo` values to the page.
 
+### Components Library
+- A library of components containing html, js, css, and php can be found in `resources/components_library`. These can be easily copied and pasted in your project.
+- #### ** Please delete the `resources/components_library` when project is complete. **
+
 
 ### JS
 - Use `resources/scripts/app.js` for main js scripts. 
-- Find JavaScript snippets @ `resources/scripts/snippets.js`
+- Find JavaScript snippets @ `resources/component_library/snippets.js`
 - When installing new scripts with npm be sure to include the package at the top of `resources/scripts/app.js`. ie `npm install slideout`
 ```
 import Slideout from 'slideout';
@@ -115,7 +119,7 @@ https://getbootstrap.com/docs/4.5/layout/grid/
     - Find CSS @ `resources/less/header.less`
     - Find JS @ `resources/scripts/app.js` `scroller()`
     
-- This Boilerplate has been set up with a working mobile nav. Slideout js has been included for use in mobile nav. 
+- This Boilerplate has been set up with a working Mobile Nav. Slideout js has been included for use in mobile nav. 
     - Find HTML @ `resources/views/partials/mobile-menu.blade.php` which has been included in `resources/views/layouts/header.blade.php`, 
     - CSS @ `resources/less/layouts/mobile-menu.less`
     - JS to handle slide out and nav buttons @ `resources/scripts/app.js` `mobileMenu()`

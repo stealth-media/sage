@@ -1,14 +1,14 @@
 @include('layouts.header')
 
-  <main id="main">
+<main id="main">
     @yield('content')
-  </main>
+</main>
 
-  @hasSection('sidebar')
+@hasSection('sidebar')
     <aside class="sidebar">
-      @yield('sidebar')
+        @yield('sidebar')
     </aside>
-  @endif
+@endif
 
 @include('layouts.footer')
 
