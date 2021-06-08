@@ -186,31 +186,33 @@ breakpoints
 .b(tiny; @content) {
     @media (max-width: 320px) { @content(); }
 }
-/* BOOTSTRAP GRID */
 .b(mobile-menu; @content) {
     @media (max-width: 1065.98px) { @content(); }
 }
 
-.b(xl; @content) {
+
+/* BOOTSTRAP GRID ============================================================ */
+
+.xl(@content) {
     @media (max-width: 1399.98px) { @content(); }
 }
 
 // Large devices (desktops, 992px and up)
-.b(lg; @content) {
+.lg(@content) {
     @media (max-width: 1199.98px) { @content(); }
 }
 
 // Medium devices (tablets, 768px and up)
-.b(md; @content) {
+.md(@content) {
     @media (max-width: 991.98px) { @content(); }
 }
 
 // Small devices (landscape phones, 576px and up)
-.b(sm; @content) {
+.sm(@content) {
     @media (max-width: 767.98px)  { @content(); }
 }
 
 // Extra small devices (portrait phones, less than 576px)
-.b(xs; @content) {
+.xs(@content) {
     @media (max-width: 575.98px)  { @content(); }
 }

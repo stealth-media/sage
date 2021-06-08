@@ -26,6 +26,8 @@
 
 ### Wordpress set up
 - Edit `app/setup.php` to enable or disable theme features, setup navigation menus, post thumbnail sizes, and sidebars.
+- Add custom filters to `app/filters.php`
+- Add custom helper functions to `app/helpers.php`
 
 
 ### HTML and Blade Templates
@@ -119,6 +121,42 @@ https://getbootstrap.com/docs/4.5/layout/grid/
     - JS to handle slide out and nav buttons @ `resources/scripts/app.js` `mobileMenu()`
     - Note: When the mobile menu is activated, `#panel` will slide. If you have `position: fixed;` elements outside of `#panel` ie. the nav, be sure to add the class `.panel-fixed`. This will slide your fixed elements with the panel.
     
+### Scroll to animations
+- This Boilerplate includes ready to use scroll to animations
+- To use a scroll to animation, add the class `.animation-element` to an element you want to trigger a scroll to animation on. Once this element is in view, it will trigger the animation for itself and it's children. 
+- You can find a library of animations in `resources/less/common/animations.less`
+    - add the animation classes to elements you want to animate. (be sure the class in uncommented in `animations.less`)
+    
+    Example:
+  
+  Once `#my-div` is in view, it will fade in
+    ```
+  <div id="my-div" class="animation-element fade-in">Foobar<div>
+    ```
+  
+  Once `#my-div` is in view, it's children will fade in.
+    ```
+   <div id="my-div" class="animation-element">
+        <div class="fade-in">Foobar</div>
+        <div class="fade-in">Foobar</div>
+        <div class="fade-in">Foobar</div>
+   <div>
+    ```
+  <small>Note: you do not need `animation-element` on every element you want to animate. `.animation-element` is just the element that triggers the animations once it's in view for itself and it's children.</small>
+  
+  You may not want all children to animate at the same time. You can delay their animation by using the `.aniamtion-delay-#` class (see `animations.less` for list of animation delays)
+  
+  Example:
+    ```
+     <div id="my-div" class="animation-element">
+          <div class="fade-in">Foobar</div> // Fades in first
+          <div class="fade-in aniamtion-delay-2">Foobar</div> // Fades in 2ms later
+          <div class="slide-in-right aniamtion-delay-4">Foobar</div> // Slides in 4ms later
+     <div>
+    ```
+  
+- You can find the javascript that controls the triggering of these animations at `resources/scripts/app.js` `animateOnScroll()`
+  
 
 ## Requirements
 
@@ -165,6 +203,7 @@ themes/sage/              # → Root of your Sage based theme
 ├── package.json          # → Node.js dependencies and scripts
 ├── resources/            # → Theme assets and templates
 │   ├── fonts/            # → Theme fonts
+│       ├── @fortawesome/ # → Fontawesome fonts 
 │   ├── images/           # → Theme images
 │   ├── scripts/          # → Theme javascript
 │       ├── app.js/       # → Main js file. 
