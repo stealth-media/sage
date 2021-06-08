@@ -181,57 +181,58 @@ To add theme to your project simply `git clone git@github.com:stealth-media/sage
 ## Theme structure
 
 ```sh
-themes/sage/              # → Root of your Sage based theme
-├── app/                  # → Theme PHP
-│   ├── View/             # → View models
-│   ├── Providers/        # → Service providers
-│   ├── admin.php         # → Theme customizer setup
-│   ├── filters.php       # → Theme filters
-│   ├── helpers.php       # → Helper functions
-│   └── setup.php         # → Theme setup
-├── bootstrap/            # → Acorn bootstrap
-│   ├── cache/            # → Acorn cache location (never edit)
-│   └── app.php           # → Acorn application bootloader
-├── config/               # → Config files
-│   ├── app.php           # → Application configuration
-│   ├── assets.php        # → Asset configuration
-│   ├── filesystems.php   # → Filesystems configuration
-│   ├── logging.php       # → Logging configuration
-│   └── view.php          # → View configuration
-├── composer.json         # → Autoloading for `app/` files
-├── composer.lock         # → Composer lock file (never edit)
-├── public/               # → Built theme assets (never edit)
-├── functions.php         # → Theme bootloader
-├── index.php             # → Theme template wrapper
-├── node_modules/         # → Node.js packages (never edit)
-├── package.json          # → Node.js dependencies and scripts
-├── resources/            # → Theme assets and templates
-│   ├── fonts/            # → Theme fonts
-│       ├── @fortawesome/ # → Fontawesome fonts 
-│   ├── images/           # → Theme images
-│   ├── scripts/          # → Theme javascript
-│       ├── app.js/       # → Main js file. 
-│       ├── snippets.js/  # → Library of js snippets that can be copied and used in app.js
-│   ├── less/             # → Theme less styles
-│       ├── common/       # → Commonly used less styles, not particular to a component or page
-│       ├── components/   # → Component Less style. used in sync with view/components
-│       ├── layouts/      # → Base Layout less styles
-│       └── app.less      # → Main less file. include all new less files here
-│   ├── sass/             # → Theme sass styles
-│       ├── common/       # → Commonly used sass styles, not particular to a component or page
-│   ├── styles/           # → Theme stylesheets
-│   └── views/            # → Theme templates
-│       ├── components/   # → Component templates
-│       ├── content/      # → Content templates. Used for inside wordpress loops
-│       ├── form/         # → Form templates
-│       ├── layouts/      # → Base templates
-│       └── partials/     # → Partial templates
-├── screenshot.png        # → Theme screenshot for WP admin
-├── storage/              # → Storage location for cache (never edit)
-├── style.css             # → Theme meta information
-├── vendor/               # → Composer packages (never edit)
-├── tailwind.config.js/   # → Tailwind configuration
-└── webpack.mix.js        # → Laravel Mix configuration
+themes/sage/                # → Root of your Sage based theme
+├── app/                    # → Theme PHP
+│   ├── View/               # → View models
+│   ├── Providers/          # → Service providers
+│   ├── admin.php           # → Theme customizer setup
+│   ├── filters.php         # → Theme filters
+│   ├── helpers.php         # → Helper functions
+│   └── setup.php           # → Theme setup
+├── bootstrap/              # → Acorn bootstrap
+│   ├── cache/              # → Acorn cache location (never edit)
+│   └── app.php             # → Acorn application bootloader
+├── config/                 # → Config files
+│   ├── app.php             # → Application configuration
+│   ├── assets.php          # → Asset configuration
+│   ├── filesystems.php     # → Filesystems configuration
+│   ├── logging.php         # → Logging configuration
+│   └── view.php            # → View configuration
+├── composer.json           # → Autoloading for `app/` files
+├── composer.lock           # → Composer lock file (never edit)
+├── public/                 # → Built theme assets (never edit)
+├── functions.php           # → Theme bootloader
+├── index.php               # → Theme template wrapper
+├── node_modules/           # → Node.js packages (never edit)
+├── package.json            # → Node.js dependencies and scripts
+├── resources/              # → Theme assets and templates
+│   ├── components_library/ # → Component Library. Please delete before launch
+│   ├── fonts/              # → Theme fonts
+│       ├── @fortawesome/   # → Fontawesome fonts 
+│   ├── images/             # → Theme images
+│   ├── scripts/            # → Theme javascript
+│       ├── app.js/         # → Main js file. 
+│       ├── snippets.js/    # → Library of js snippets that can be copied and used in app.js
+│   ├── less/               # → Theme less styles
+│       ├── common/         # → Commonly used less styles, not particular to a component or page
+│       ├── components/     # → Component Less style. used in sync with view/components
+│       ├── layouts/        # → Base Layout less styles
+│       └── app.less        # → Main less file. include all new less files here
+│   ├── sass/               # → Theme sass styles
+│       ├── common/         # → Commonly used sass styles, not particular to a component or page
+│   ├── styles/             # → Theme stylesheets
+│   └── views/              # → Theme templates
+│       ├── components/     # → Component templates
+│       ├── content/        # → Content templates. Used for inside wordpress loops
+│       ├── form/           # → Form templates
+│       ├── layouts/        # → Base templates
+│       └── partials/       # → Partial templates
+├── screenshot.png          # → Theme screenshot for WP admin
+├── storage/                # → Storage location for cache (never edit)
+├── style.css               # → Theme meta information
+├── vendor/                 # → Composer packages (never edit)
+├── tailwind.config.js/     # → Tailwind configuration
+└── webpack.mix.js          # → Laravel Mix configuration
 ```
 
 ## Documentation
