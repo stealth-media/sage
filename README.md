@@ -82,6 +82,18 @@ Example: We can set my-component's `$foo` variable as `$bar`
 - We commonly use Advanced Custom Fields Pro. Fields can be grabbed easily using this syntax `@php($foo = get_field('foo'))`
 - To see the contents / array of the above `$foo` you can use `@dd()` ie. `@dd($foo)`. This will print the `$foo` values to the page.
 
+Example:
+
+    @php($flexible = get_field('flex_content'))
+    @if($flexible)
+        @foreach ($flexible as $flex)
+            @if($flex['acf_fc_layout'] == 'my-component')
+                <x-my-component :component="$flex" />
+            @endif
+        @endforeach
+    @endif
+    
+
 ### Components Library
 - A library of components containing html, js, css, and php can be found in `resources/components_library`. These can be easily copied and pasted in your project.
 - #### ** Please delete the `resources/components_library` when project is complete. **
