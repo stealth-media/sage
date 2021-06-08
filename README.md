@@ -13,7 +13,7 @@
 2. If you do not have yarn, install yarn by running `npm install --global yarn`
 3. Once you have yarn, run `yarn` from the theme directory to install dependencies
 4. Choose which css pre-processor you would like to use in `webpack.mix.js`. Both LESS (default) and SASS available.
-5. To use Browsersync be sure to set your local site url `.browserSync('local-app-url.test');`
+5. To use Browsersync be sure to set your local dev url `.browserSync('your-local-dev-url.test');`
 
  If using less, start with editing the `variables.less` file. 
 
@@ -30,6 +30,7 @@
 
 ### HTML and Blade Templates
 - This Boilerplate has removed the original Sage code from `index.php`.
+    - You can find the primary layout in `resources/views/layouts/app.blade.php`
     - You can find the `<head>` in `resources/views/layouts/header.blade.php`
     - You can find the closing `</body>` in `resources/views/layouts/footer.blade.php`
 - Any blade components created in `resources/views/components` can be used in other blade files using this syntax:
@@ -37,26 +38,53 @@
 ```
 /views/components/my-component.blade.php:
 <x-my-component />
-
-or
-
+OR
 /views/components/folder/my-component.blade.php
-<x-folder.my-component.blade.php />
+<x-folder.my-component />
+```
 
-You can pass a variable to a components.
-Example: We can set my-component's $foo variable as $bar
+- Blade components can only have 1 root elements
+```
+Correct:
+______________
+<div>
+    <h1>Hello World</h1>
+    <h2>Hello Moon</h2>
+</div>
+
+Wrong:
+______________
+<h1>Hello World</h1>
+<h2>Hello Moon</h2>
+```
+
+- You can pass a variable to a component.
+Example: We can set my-component's `$foo` variable as `$bar`
+```
 <x-my-component :foo="$bar" />
 ```
+- For more on blade, see https://laravel.com/docs/8.x/blade
+- Too create a new wordpress template, copy and paste the `template-custom.blade.php` found in `resources/views`. Then update the `Template Name:` comment at the top of the file.
+- You can do php in blade 2 ways
+    - For a single line of php you can use `@php()` ie. `@php($foo = 'bar')`
+    - For multiple lines of php you can use `@php @endphp` ie
+    ```
+    @php
+        $foo = array('item', 'item');
+        do_someting($foo[0]);
+    @endphp
+    ```
+  - Note: we noticed that sometimes `@php` does not work. use `<?php ?>` instead if that's the case
+
+### Advanced Custom Fields Pro
 - We commonly use Advanced Custom Fields Pro. Fields can be grabbed easily using this syntax `@php($foo = get_field('foo'))`
 - To see the contents / array of the above `$foo` you can use `@dd()` ie. `@dd($foo)`. This will print the `$foo` values to the page.
-- For more on blade, see https://laravel.com/docs/8.x/blade
-- Too create a new wordpress template, copy and paste the `template-custom.blade.php` found in `resources/views`
 
 
 ### JS
 - Use `resources/scripts/app.js` for main js scripts. 
 - Find JavaScript snippets @ `resources/scripts/snippets.js`
-- When installing new scripts with npm be sure to include the package at the top of `resources/scripts/app.js`. ie
+- When installing new scripts with npm be sure to include the package at the top of `resources/scripts/app.js`. ie `npm install slideout`
 ```
 import Slideout from 'slideout';
 ```
@@ -64,8 +92,9 @@ import Slideout from 'slideout';
 
 
 ### Grid & Bootstrap
+https://getbootstrap.com/docs/4.5/layout/grid/
 - The bootstrap grid is applied and can be found at `resources/less/common/bootstrap/grid.less`. To enable bootstrap css, uncomment "bootstrap.less" from `app.less`
-- See `resources/less/common/mixins.less` for breakpoint mixins. ie. `.lg()`, `.md()`, `.sm()`, etc. These breakpoints mixins can be used to apply media query styling at to correct grid breakpoints. Breakpoint dimension is written in comments of mixins
+- See `resources/less/common/mixins.less` for breakpoint mixins. ie. `.lg()`, `.md()`, `.sm()`, etc. These breakpoints mixins can be used to apply media query styling at to correct grid breakpoints. Breakpoint dimensions are written in comments of mixins
     
     Example:
     ```
