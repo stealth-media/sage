@@ -3,7 +3,7 @@
 </p>
 
 <p align="center">
-  <a href="https://roots.io">Official Website</a> | <a href="https://roots.io/docs/sage/">Documentation</a> | <a href="CHANGELOG.md">Change Log</a>
+  <a href="https://roots.io">Official Website</a> | <a href="https://roots.io/docs/sage/">Documentation</a>
 </p>
 
 ## Stealth Boilerplate Notes
