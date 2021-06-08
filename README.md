@@ -1,5 +1,5 @@
 <p align="center">
-  <strong>Stealth's WordPress starter theme Built off of Sage 9 by roots</strong>
+  <strong>Stealth's WordPress starter theme Built off of Sage 10 by roots</strong>
 </p>
 
 <p align="center">
@@ -7,30 +7,89 @@
 </p>
 
 ## Stealth Boilerplate Notes
-- Choose which css pre-processor you would like to use in `webpack.mix.js`. Both SASS (default) and LESS available.
-- If using less, start with editing the `variables.less` file. The bootstrap grid is applied and can be found at `resources/less/common/bootstrap/grid.less`. To enable bootstrap css, uncomment "bootstrap.less" from `app.less`
-- This Boilerplate has removed the original Sage code from `index.php` and has placed the `<head>` in `resources/views/layouts/header.blade.php` and closing `</body>` in `resources/views/layouts/footer.blade.php`
-- Find JavaScript snippet @ `resources/scripts/snippets.js` (use `app.js` for main js scripts)
+
+### Getting Started
+1. Run `composer install` from the root of the theme
+2. If you do not have yarn, install yarn by running `npm install --global yarn`
+3. Once you have yarn, run `yarn` from the theme directory to install dependencies
+4. Choose which css pre-processor you would like to use in `webpack.mix.js`. Both LESS (default) and SASS available.
+5. To use Browsersync be sure to set your local site url `.browserSync('local-app-url.test');`
+
+ If using less, start with editing the `variables.less` file. 
+
+
+### Development 
+- `yarn start` — Compile assets when file changes are made, start Browsersync session
+- `yarn build` — Compile and optimize the files in your assets directory
+- `yarn build:production` — Compile assets for production
+
+
+### Wordpress set up
+- Edit `app/setup.php` to enable or disable theme features, setup navigation menus, post thumbnail sizes, and sidebars.
+
+
+### HTML and Blade Templates
+- This Boilerplate has removed the original Sage code from `index.php`.
+    - You can find the `<head>` in `resources/views/layouts/header.blade.php`
+    - You can find the closing `</body>` in `resources/views/layouts/footer.blade.php`
+- Any blade components created in `resources/views/components` can be used in other blade files using this syntax:
+
+```
+/views/components/my-component.blade.php:
+<x-my-component />
+
+or
+
+/views/components/folder/my-component.blade.php
+<x-folder.my-component.blade.php />
+
+You can pass a variable to a components.
+Example: We can set my-component's $foo variable as $bar
+<x-my-component :foo="$bar" />
+```
+- We commonly use Advanced Custom Fields Pro. Fields can be grabbed easily using this syntax `@php($foo = get_field('foo'))`
+- To see the contents / array of the above `$foo` you can use `@dd()` ie. `@dd($foo)`. This will print the `$foo` values to the page.
+- For more on blade, see https://laravel.com/docs/8.x/blade
+- Too create a new wordpress template, copy and paste the `template-custom.blade.php` found in `resources/views`
+
+
+### JS
+- Use `resources/scripts/app.js` for main js scripts. 
+- Find JavaScript snippets @ `resources/scripts/snippets.js`
+- When installing new scripts with npm be sure to include the package at the top of `resources/scripts/app.js`. ie
+```
+import Slideout from 'slideout';
+```
+- jQuery is supported out of the box
+
+
+### Grid & Bootstrap
+- The bootstrap grid is applied and can be found at `resources/less/common/bootstrap/grid.less`. To enable bootstrap css, uncomment "bootstrap.less" from `app.less`
+- See `resources/less/common/mixins.less` for breakpoint mixins. ie. `.lg()`, `.md()`, `.sm()`, etc. These breakpoints mixins can be used to apply media query styling at to correct grid breakpoints. Breakpoint dimension is written in comments of mixins
+    
+    Example:
+    ```
+    nav {
+      font-size:20px;
+      .md({
+        font-size:15px; // applied to md and smaller
+      });
+    }
+    ```
+  
+  
+### Menus
+- This Boilerplate includes a prebuilt Nav and Mega Nav
+    - Find HTML @ `resources/views/partials/nav.blade.php` and `resources/views/partials/mega-nav.blade.php`. Include the nav you are using above `#panel` in `resources/layouts/header.blade.php`
+    - Find CSS @ `resources/less/header.less`
+    - Find JS @ `resources/scripts/app.js` `scroller()`
+    
 - This Boilerplate has been set up with a working mobile nav. Slideout js has been included for use in mobile nav. 
     - Find HTML @ `resources/views/partials/mobile-menu.blade.php` which has been included in `resources/views/layouts/header.blade.php`, 
     - CSS @ `resources/less/layouts/mobile-menu.less`
     - JS to handle slide out and nav buttons @ `resources/scripts/app.js` `mobileMenu()`
-
-## About Sage
-
-Sage is a productivity-driven WordPress starter theme with a modern development workflow.
-
-**The `master` branch currently tracks Sage 10 which is in active development. Looking for Sage 9? [See releases](https://github.com/roots/sage/releases).**
-
-## Features
-
-- Harness the power of [Laravel](https://laravel.com) and its available packages thanks to [Acorn](https://github.com/roots/acorn).
-- Clean, efficient theme templating utilizing [Laravel Blade](https://laravel.com/docs/master/blade).
-- Easy [Browsersync](http://www.browsersync.io/) support alongside asset compilation, concatenating, and minification powered by [Laravel Mix](https://github.com/JeffreyWay/laravel-mix).
-- Out of the box support for [TailwindCSS](https://tailwindcss.com/) and [jQuery](https://jquery.com).
-- A clean starting point for theme styles using [Sass](https://sass-lang.com/).
-
-See a working example at [roots-example-project.com](https://roots-example-project.com/).
+    - Note: When the mobile menu is activated, `#panel` will slide. If you have `position: fixed;` elements outside of `#panel` ie. the nav, be sure to add the class `.panel-fixed`. This will slide your fixed elements with the panel.
+    
 
 ## Requirements
 
@@ -42,25 +101,16 @@ Make sure all dependencies have been installed before moving on:
 - [Node.js](http://nodejs.org/) >= 12.14.0
 - [Yarn](https://yarnpkg.com/en/docs/install)
 
+
 ## Theme installation
 
-Install Sage using Composer from your WordPress themes directory (replace `your-theme-name` below with the name of your theme):
+To add theme to your project simply `git clone git@github.com:stealth-media/sage.git` from your root `themes` directory
 
-```sh
-# @ app/themes/ or wp-content/themes/
-$ composer create-project roots/sage your-theme-name
-```
-
-To install the latest development version of Sage, add `dev-master` to the end of the command:
-
-```sh
-$ composer create-project roots/sage your-theme-name dev-master
-```
 
 ## Theme structure
 
 ```sh
-themes/your-theme-name/   # → Root of your Sage based theme
+themes/sage/              # → Root of your Sage based theme
 ├── app/                  # → Theme PHP
 │   ├── View/             # → View models
 │   ├── Providers/        # → Service providers
@@ -88,11 +138,19 @@ themes/your-theme-name/   # → Root of your Sage based theme
 │   ├── fonts/            # → Theme fonts
 │   ├── images/           # → Theme images
 │   ├── scripts/          # → Theme javascript
+│       ├── app.js/       # → Main js file. 
+│       ├── snippets.js/  # → Library of js snippets that can be copied and used in app.js
 │   ├── less/             # → Theme less styles
+│       ├── common/       # → Commonly used less styles, not particular to a component or page
+│       ├── components/   # → Component Less style. used in sync with view/components
+│       ├── layouts/      # → Base Layout less styles
+│       └── app.less      # → Main less file. include all new less files here
 │   ├── sass/             # → Theme sass styles
+│       ├── common/       # → Commonly used sass styles, not particular to a component or page
 │   ├── styles/           # → Theme stylesheets
 │   └── views/            # → Theme templates
 │       ├── components/   # → Component templates
+│       ├── content/      # → Content templates. Used for inside wordpress loops
 │       ├── form/         # → Form templates
 │       ├── layouts/      # → Base templates
 │       └── partials/     # → Partial templates
@@ -100,23 +158,9 @@ themes/your-theme-name/   # → Root of your Sage based theme
 ├── storage/              # → Storage location for cache (never edit)
 ├── style.css             # → Theme meta information
 ├── vendor/               # → Composer packages (never edit)
+├── tailwind.config.js/   # → Tailwind configuration
 └── webpack.mix.js        # → Laravel Mix configuration
 ```
-
-## Theme setup
-
-Edit `app/setup.php` to enable or disable theme features, setup navigation menus, post thumbnail sizes, and sidebars.
-
-## Theme development
-- Run `npm install --global yarn` to install yarn on your machine. (If you do not have it already)
-- Run `yarn` from the theme directory to install dependencies
-- Update `webpack.mix.js` with your local dev URL
-
-### Build commands
-
-- `yarn start` — Compile assets when file changes are made, start Browsersync session
-- `yarn build` — Compile and optimize the files in your assets directory
-- `yarn build:production` — Compile assets for production
 
 ## Documentation
 

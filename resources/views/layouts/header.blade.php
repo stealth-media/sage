@@ -30,6 +30,6 @@
     <!-- MOBILE NAV -->
     @include('partials.mobile-menu')
 
+    @include('partials.nav')
     <main id="panel"><!-- Needed for mobile menu. This is what slides when you click mobile menu button -->
-        @include('partials.nav')
 {{--        @include('partials.mega-nav')--}}
