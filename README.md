@@ -119,7 +119,7 @@ https://getbootstrap.com/docs/4.5/layout/grid/
     - Find HTML @ `resources/views/partials/mobile-menu.blade.php` which has been included in `resources/views/layouts/header.blade.php`, 
     - CSS @ `resources/less/layouts/mobile-menu.less`
     - JS to handle slide out and nav buttons @ `resources/scripts/app.js` `mobileMenu()`
-    - Note: When the mobile menu is activated, `#panel` will slide. If you have `position: fixed;` elements outside of `#panel` ie. the nav, be sure to add the class `.panel-fixed`. This will slide your fixed elements with the panel.
+    - Note: When the mobile menu is activated, `#panel` will slide. If you have `position: fixed;` elements outside of `#panel` ie. the nav, be sure to add the class `.fixed-to-panel`. This will slide your fixed elements with the panel.
     
 ### Scroll to animations
 - This Boilerplate includes ready to use scroll to animations

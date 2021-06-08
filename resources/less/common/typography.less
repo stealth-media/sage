@@ -9,92 +9,91 @@
 }
 
 body {
-  font-family: @font-text;
-  font-size: 16px;
-  font-weight: normal;
-  line-height: 1;
-  color: @body-color;
+    font-family: @font-text;
+    font-size: 16px;
+    font-weight: normal;
+    line-height: 1;
+    color: @body-color;
 }
 
 /***********************************************************************/
 /********** Headings ***************************************************/
 /***********************************************************************/
 .title, .heading {
-  font-family: @font-heading;
+    font-family: @font-heading;
 }
 
 h1, .h1 {
-  .font-size(45);
-  line-height: @baseline*2.5;
-  font-family: @font-heading;
-  color: @primary-color;
-  margin-bottom: @baseline;
-  letter-spacing: 0px;
-  text-transform: none;
+    .font-size(45);
+    line-height: 1.2;
+    font-family: @font-heading;
+    color: @primary-color;
+    margin-bottom: @baseline;
+    letter-spacing: 0px;
+    text-transform: none;
 }
 
 h2, .h2 {
-  .font-size(36);
-  line-height: @baseline*2;
-  font-family: @font-heading;
-  color: @primary-color;
-  margin-bottom: @baseline;
-  letter-spacing: 0px;
-  text-transform: none;
+    .font-size(36);
+    line-height: 1.2;
+    font-family: @font-heading;
+    color: @primary-color;
+    margin-bottom: @baseline;
+    letter-spacing: 0px;
+    text-transform: none;
 }
 
 h3, .h3 {
-  .font-size(24);
-  line-height: @baseline*1.5;
-  font-family: @font-heading;
-  color: @primary-color;
-  margin-bottom: @baseline;
-  letter-spacing: 0px;
-  text-transform: none;
+    .font-size(24);
+    line-height: 1.2;
+    font-family: @font-heading;
+    color: @primary-color;
+    margin-bottom: @baseline;
+    letter-spacing: 0px;
+    text-transform: none;
 }
 
 h4, .h4 {
-  .font-size(20);
-  line-height: @baseline;
-  font-family: @font-heading;
-  color: @text-color-primary;
-  margin-bottom: @bl*0.5;
-  letter-spacing: 0px;
-  text-transform: none;
+    .font-size(20);
+    line-height: 1;
+    font-family: @font-heading;
+    color: @text-color-primary;
+    margin-bottom: @bl*0.5;
+    letter-spacing: 0px;
+    text-transform: none;
 }
 
 h5, .h5 {
-  .font-size(18);
-  line-height: @baseline;
-  font-family: @font-text;
-  color: @text-color-primary;
-  margin-bottom: @bl*0.5;
-  letter-spacing: 0px;
-  text-transform: none;
+    .font-size(18);
+    line-height: 1;
+    font-family: @font-text;
+    color: @text-color-primary;
+    margin-bottom: @bl*0.5;
+    letter-spacing: 0px;
+    text-transform: none;
 }
 
 h6, .h6 {
-  .font-size(16);
-  line-height: @baseline*2.5;
-  font-family: @font-text;
-  color: @text-color-primary;
-  margin-bottom: @bl*0.5;
-  letter-spacing: 0px;
-  text-transform: none;
+    .font-size(16);
+    line-height: 1;
+    font-family: @font-text;
+    color: @text-color-primary;
+    margin-bottom: @bl*0.5;
+    letter-spacing: 0px;
+    text-transform: none;
 }
-
 
 /***********************************************************************/
 /*********** Paragraphs and Text Effects *******************************/
 /***********************************************************************/
 p, .p {
-  .font-size(15);
-  line-height: @baseline;
-  font-family: @font-text;
-  color: @body-color;
-  margin-bottom: @baseline;
-  letter-spacing: 0px;
-  text-transform: none;
+    .font-size(16);
+    line-height: 1.5;
+    font-family: @font-text;
+    color: @body-color;
+    margin-bottom: @baseline;
+    letter-spacing: 0px;
+    text-transform: none;
 }
 
 i, em {
@@ -117,26 +116,26 @@ sup, sub {
 /*********** Links *****************************************************/
 /***********************************************************************/
 a, a:visited {
-   color: @link-color;
-   text-decoration: none;
-   outline: none;
-   .transition();
- }
+    color: @link-color;
+    text-decoration: none;
+    outline: none;
+    .transition();
+}
 
 a:hover, a:focus, a:active {
-  color: @link-hover-color;
-  text-decoration: none;
-  outline: none;
+    color: @link-hover-color;
+    text-decoration: none;
+    outline: none;
 }
 
 /***********************************************************************/
 /********** Lines & Boxes **********************************************/
 /***********************************************************************/
 hr {
-  height: 0px;
-  margin: @baseline*3 0px;
-  border:none;
-  border-bottom: 2px solid @secondary-color;
+    height: 0px;
+    margin: @baseline*3 0px;
+    border: none;
+    border-bottom: 2px solid @secondary-color;
 }
 
 /***********************************************************************/
@@ -144,30 +143,30 @@ hr {
 /***********************************************************************/
 blockquote {
 
-  p {
+    p {
 
-  }
+    }
 
-  cite {
+    cite {
 
-	&::before {
+        &::before {
 
-	}
-  }
+        }
+    }
 }
 
 /***********************************************************************/
 /****** LISTS **********************************************************/
 /***********************************************************************/
 ol, ul {
-  list-style-type: none;
-  margin-bottom: 0px;
-  padding-left: 0px;
+    list-style-type: none;
+    margin-bottom: 0px;
+    padding-left: 0px;
 }
 
 main {
-  ol, ul {
-    list-style-position: inside;
-    font-weight: normal;
-  }
+    ol, ul {
+        list-style-position: inside;
+        font-weight: normal;
+    }
 }

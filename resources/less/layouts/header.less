@@ -7,334 +7,298 @@
 /********** MAIN MENU / MAIN NAV / MAIN HEADER **********************************************************/
 //noinspection LessResolvedByNameOnly
 #header {
-  width: 100%;
-  z-index: 999;
+    width: 100%;
+    z-index: 999;
 
-  .current-menu-parent > a:before, .home.current-page-ancestor > a:before {
-	//left: 0 !important;
-	//right: 0 !important;
-  }
+    .current-menu-parent > a:before, .home.current-page-ancestor > a:before {
+        //left: 0 !important;
+        //right: 0 !important;
+    }
 
-  // Top Level Nav Link is being viewed
-  // |*HOME*| ABOUT | SERVICES +| CONTACT
-  .current_page_item > a {
-	//border-bottom: 2px solid @white;
-	//margin-top: -2px !important;
-	//padding-top: 3px;
-	//line-height: 37px;
-  }
+    // Top Level Nav Link is being viewed
+    // |*HOME*| ABOUT | SERVICES +| CONTACT
+    .current_page_item > a {
+        //border-bottom: 2px solid @white;
+        //margin-top: -2px !important;
+        //padding-top: 3px;
+        //line-height: 37px;
+    }
 
-  // Main nav link has a sub page that is being viewed
-  // | HOME | ABOUT |*SERVICES +*| CONTACT
-  .current-page-ancestor > a {
-	//border-bottom: 2px solid @white;
-	//margin-top: -2px !important;
-  }
+    // Main nav link has a sub page that is being viewed
+    // | HOME | ABOUT |*SERVICES +*| CONTACT
+    .current-page-ancestor > a {
+        //border-bottom: 2px solid @white;
+        //margin-top: -2px !important;
+    }
 
-  // Sub page is being viewed
-  // | HOME | ABOUT | SERVICES +| CONTACT
-  //               |    *-SUB* |
-  //              + --------- +
-  .sub-menu .current_page_item a:first-of-type {
-	//border-bottom: none !important;
-	//background: fade(@white, 10%);
-	//opacity: 1;
-  }
+    // Sub page is being viewed
+    // | HOME | ABOUT | SERVICES +| CONTACT
+    //               |    *-SUB* |
+    //              + --------- +
+    .sub-menu .current_page_item a:first-of-type {
+        //border-bottom: none !important;
+        //background: fade(@white, 10%);
+        //opacity: 1;
+    }
 }
 
 /********************************************************************************************************/
 /********** MENU **************************************************************************************/
 /****************************************************************************************************/
 // MAIN MENU (Menu before scroll) PRIMARY ===========================================================
-.header-primary {
-  z-index: 3;
-  margin-top: 0px;
-  position: absolute !important;
-  height: @header-height; // edit variable.less
-  width: 100%;
-  background: @text-color-dark;
-  .box-shadow();
-  .flex-row(space-between);
-  align-items: center;
-  .transition();
-
-  /* Branding (ie. Logo) */
-  #site-branding {
-    width: auto;
-    text-align: left;
-    position: relative;
-    z-index: 900;
-	height: @header-height; // edit variable.less
-	.flex-column();
-  }
-
-  /* Site Menu */
-  #site-menu {
-    line-height: @baseline*2;
-    transition: @easing;
+.header {
+    z-index: 10;
+    margin-top: 0px;
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    height: @header-height; // edit variable.less
     width: 100%;
+    background: @text-color-dark;
+    .box-shadow();
+    .flex-row(space-between);
+    .transition();
 
-    /* Main Menus / Upper-most Menu Links */
-    #main-menu {
-      .flex-row(flex-end);
-      width: 100%;
-      position: relative;
-      list-style-type: none;
+    /* Branding (ie. Logo) */
 
-      a { // Nav link
-        display: block;
-        .font-size(12);
-        cursor: pointer;
-        color: @primary-color;
+    .header__site-branding {
+        width: auto;
+        text-align: left;
+        position: relative;
+        z-index: 900;
+        height: @header-height; // edit variable.less
+        .flex-column();
 
-        &:hover {
-          color: @secondary-color;
+        img {
+            .full-height();
+            object-fit: contain;
         }
-      }
-
-      /* Set list to inline-block for horizontal menu */
-      & > li {
-        display: inline-block;
-        text-align: center;
-		position: relative;
-		line-height: @header-height;// edit variables.less. This line height is what makes the submenu show below the navbar.
-
-		// Add space to the nav items, except for last one
-		&:not(:last-of-type) {
-		  margin-right: @baseline*2;
-		}
-
-		// Style the Nav items with sub menus
-		&.menu-item-has-children > a {
-		  &:after {
-			.fa-chevron-down();
-			font-family: @font-awesome;
-			margin-left: 10px;
-		  }
-		}
-
-        & > a {
-          text-transform: uppercase;
-          letter-spacing: 0.1em;
-          color: @primary-color;
-        }
-
-        &:hover {
-          color: @secondary-color;
-        }
-
-        /**** SUB MENU ****/
-        /* Show Sub menu on Parent Hover */
-
-        &:hover > ul.sub-menu {
-		  opacity: 1;
-		  visibility: visible;
-        }
-
-        /* Sub Menu Styles */
-        ul.sub-menu {
-		  opacity: 0;
-		  visibility: hidden;
-		  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
-
-		  flex-direction: column;
-		  display: flex;
-		  justify-content: center;
-          position: absolute;
-          right: 0px;
-          width: 100%;
-		  min-width: 200px;// Min width of the sub-nav
-          line-height: @baseline;
-          margin-top: 0px;
-          padding: 20px 0;
-          color: @secondary-color;
-          background: @text-color-light;
-		  .box-shadow();
-          text-align: right;
-          list-style-type: none;
-
-          li {
-            transition: @easing;
-
-            a {
-              display: block;
-              padding: 10px 20px 14px 20px;
-              line-height: 1em;
-              text-transform: capitalize;
-              transition: @easing;
-              color: @primary-color;
-
-              &:hover {
-                color: @secondary-color;
-              }
-            }
-          }
-        }
-      }
     }
-  }
 
-  .site-nav-button-container {
-	text-align: right;
-	padding-top: 0px;
+    /* Site Menu */
 
-	.nav-cta-btn {
-	  border: 2px solid @primary-color;
-	  color: @white;
-	  text-transform: uppercase;
-	  font-family: @font-text;
-	  font-weight: @weight-thin;
-	  .font-size(12);
-	  padding: 0 @baseline*1.5;
-	  height: @baseline*2;
-	  line-height: 38px;
-	  margin-right: @baseline;
-	  .transition();
-	}
+    .header__site-menu {
+        line-height: 1;
+        transition: @easing;
+        width: 100%;
 
-	.nav-cta-btn:hover {
-	  color: @primary-color;
-	}
+        /* Main Menus / Upper-most Menu Links */
 
-	.btn-nav, .btn-nav:visited {
-	  background: @white;
-	  .border-radius();
-	  color: @white;
-	  .font-size(18);
-	  height: @baseline*2;
-	  line-height: @baseline*2;
-	}
+        #main-menu {
+            .flex-row(flex-end);
+            width: 100%;
+            position: relative;
+            list-style-type: none;
 
-	.btn-nav:hover, .btn-nav:active {
+            a { // Default Nav link <a>
+                display: block;
+                .font-size(14);
+                cursor: pointer;
+                color: @primary-color;
 
-	  .hamburger.is-active .hamburger-inner,
-	  .hamburger.is-active .hamburger-inner::before,
-	  .hamburger.is-active .hamburger-inner::after,
-	  .hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
-		background-color: @white;
-	  }
-	}
+                &:hover {
+                    color: @secondary-color;
+                }
+            }
 
-	.btn-nav:focus {outline: 0;}
+            & > li { // Default Nav link <li>
+                display: inline-block; // Set list to inline-block for horizontal menu
+                text-align: center;
+                position: relative;
+                line-height: @header-height; // edit variables.less. This line height is what makes the submenu show below the navbar.
 
-	// Arrow
-	.btn-nav:not(.is-active):hover .hamburger-inner::before {
-	  width: 30px;
-	  top: -7px;
-	  transform: translate3d(-8px, 0, 0) rotate(-45deg) scale(0.7, 1); }
+                // Add space to the nav items, except for last one
+                &:not(:last-of-type) {
+                    margin-right: @baseline*2;
+                }
 
-	.btn-nav:not(.is-active):hover .hamburger-inner::after {
-	  width: 30px;
-	  top: 7px;
-	  transform: translate3d(-8px, 0, 0) rotate(45deg) scale(0.7, 1); }
-  }
+                // Style the Nav items with sub menus
+                &.menu-item-has-children > a {
+                    &:after {
+                        .fa-chevron-down();
+                        font-family: @font-awesome;
+                        margin-left: 10px;
+                    }
+                }
+
+                & > a {
+                    text-transform: uppercase;
+                    letter-spacing: 0.1em;
+                    color: @primary-color;
+                }
+
+                &:hover {
+                    color: @secondary-color;
+                }
+
+                /**** SUB MENU ****/
+                /* Show Sub menu on Parent Hover */
+
+                &:hover > ul.sub-menu {
+                    opacity: 1;
+                    visibility: visible;
+                }
+
+                /* Sub Menu Styles */
+
+                ul.sub-menu {
+                    opacity: 0;
+                    visibility: hidden;
+                    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+
+                    flex-direction: column;
+                    display: flex;
+                    justify-content: center;
+                    position: absolute;
+                    right: 0px;
+                    width: 100%;
+                    min-width: 200px; // Min width of the sub-nav
+                    line-height: @baseline;
+                    margin-top: 0px;
+                    padding: 20px 0;
+                    color: @secondary-color;
+                    background: @text-color-light;
+                    .box-shadow();
+                    text-align: right;
+                    list-style-type: none;
+
+                    li {
+                        transition: @easing;
+
+                        a {
+                            display: block;
+                            padding: 10px 20px 14px 20px;
+                            line-height: 1em;
+                            text-transform: capitalize;
+                            transition: @easing;
+                            color: @primary-color;
+
+                            &:hover {
+                                color: @secondary-color;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // For the mobile nav Button
+    .header__site-nav-button-container {
+        text-align: right;
+        padding-top: 0px;
+        height: 100%;
+
+        .btn-nav, .btn-nav:visited {
+            background: @white;
+            .border-radius();
+            color: @white;
+            .font-size(18);
+            height: @baseline*2;
+            line-height: @baseline*2;
+        }
+
+        .btn--nav:hover, .btn--nav:active {
+
+            .hamburger.is-active .hamburger-inner,
+            .hamburger.is-active .hamburger-inner::before,
+            .hamburger.is-active .hamburger-inner::after,
+            .hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
+                background-color: @white;
+            }
+        }
+
+        .btn--nav:focus {outline: 0;}
+
+        // Arrow
+        .btn--nav:not(.is-active):hover .hamburger-inner::before {
+            width: 30px;
+            top: -7px;
+            transform: translate3d(-8px, 0, 0) rotate(-45deg) scale(0.7, 1); }
+
+        .btn--nav:not(.is-active):hover .hamburger-inner::after {
+            width: 30px;
+            top: 7px;
+            transform: translate3d(-8px, 0, 0) rotate(45deg) scale(0.7, 1); }
+    }
 }
 
 // Secondary Header Overrides (After Scroll) ==========================================================
-.header-primary.header-secondary {
-  position: fixed !important;
-  top: 0px !important;
-  padding: 10px 0px;
+.header.header--secondary {
+    position: fixed !important;
+    top: 0px !important;
+    padding: 10px 0px;
 
-  #site-branding {
-  }
+    .header__site-branding {
+    }
 
-  #site-menu {
+    .header__site-menu {
 
-	/* Main Menus / Upper-most Menu Links */
-	#main-menu {
-	  a {
-		//color: @secondary-color;
+        /* Main Menus / Upper-most Menu Links */
 
-		&:hover {
-		  //color: @primary-color !important;
-		}
-	  }
+        #main-menu {
+            a {
+                //color: @secondary-color;
 
-	  & > li {
-		& > a {
-		  color: @secondary-color;
-		}
+                &:hover {
+                    //color: @primary-color !important;
+                }
+            }
 
-		&:hover {
-		  color: @primary-color !important;
-		}
-	  }
-	}
-  }
+            & > li {
+                & > a {
+                    color: @secondary-color;
+                }
 
-  .site-nav-button-container {
-	.nav-cta-btn {
-	  border: 2px solid @primary-color !important;
-	  color: @secondary-color !important;
-	  .transition();
-	}
-
-	.nav-cta-btn:hover {
-	  color: @white !important;
-	}
-
-	.btn-nav:hover, .btn-nav:active {
-
-	  .hamburger.is-active .hamburger-inner,
-	  .hamburger.is-active .hamburger-inner::before,
-	  .hamburger.is-active .hamburger-inner::after,
-	  .hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
-		background-color: @secondary-color !important;
-	  }
-	}
-
-	.hamburger.is-active .hamburger-inner,
-	.hamburger.is-active .hamburger-inner::before,
-	.hamburger.is-active .hamburger-inner::after {
-	  background-color: @secondary-color !important;
-	}
-
-	.hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
-	  background-color: @secondary-color !important;
-	  transition-property: transform, background-color;
-	}
-  }
+                &:hover {
+                    color: @primary-color !important;
+                }
+            }
+        }
+    }
 }
 
 /********************************************************************************************************/
 /********** MEGA MENU *********************************************************************************/
 /****************************************************************************************************/
-.mega-menu {
-  #site-branding {
-	width: 100px;
-  }
+.header--mega-menu {
+    .header__site-branding {
+        width: 100px;
+    }
 
-  .site-nav-button-container {
-	position: absolute;
-	top: 20px;
-	right: 0;
-  }
+    .header__site-nav-button-container {
+        position: absolute;
+        top: 20px;
+        right: 0;
+    }
 
-  /* Site Menu */
-  #site-menu {
-	height: @header-height; // edit variable.less
-	position: absolute;
-	top: 0;
-	left: 0;
+    /* Site Menu */
+    .header__site-menu {
+        height: @header-height; // edit variable.less
+        position: absolute;
+        top: 0;
+        left: 0;
 
-	/* Main Menus / Upper-most Menu Links */
-	#main-menu {
-	  .flex-row(center);
-	  position: unset;
+        /* Main Menus / Upper-most Menu Links */
 
-	  /* Set list to inline-block for horizontal menu */
-	  & > li {
-		position: unset;
+        #main-menu {
+            .flex-row(center);
+            position: unset;
 
-		/**** SUB MENU ****/
-		/* Sub Menu Styles */
-		ul.sub-menu {
-		  flex-direction: row;
-		  justify-content: center;
-		  left: 0px;
-		}
-	  }
-	}
-  }
+            /* Set list to inline-block for horizontal menu */
+
+            & > li {
+                position: unset;
+
+                /**** SUB MENU ****/
+                /* Sub Menu Styles */
+
+                ul.sub-menu {
+                    flex-direction: row;
+                    justify-content: center;
+                    left: 0px;
+                }
+            }
+        }
+    }
 }

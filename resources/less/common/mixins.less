@@ -25,7 +25,8 @@
 
 .text-normal() {text-transform: none;}
 
-.ul-col(@i: 2){
+/* makes ul items layout in multiple columns */
+.ul-col(@i: 2) {
     columns: @i;
     -webkit-columns: @i;
     -moz-columns: @i;
@@ -100,6 +101,12 @@
     height: auto;
 }
 
+/* Makes an element take up the full width and height of parent. useful. for column components. like features blog posts */
+.full-height() {
+    width: 100%;
+    height: 100%;
+}
+
 /* Makes a section full width with full page height */
 .full-page() {
     width: 100%;
@@ -169,50 +176,67 @@
 breakpoints
 ########################## */
 .b(desktop; @content) {
-    @media (min-width: 70em) { @content(); }
-}
-.b(laptop; @content) {
-    @media (max-width: 1350px) { @content(); }
-}
-.b(tablet; @content) {
-    @media (max-width: 1023px) { @content(); }
-}
-.b(phablet; @content) {
-    @media (min-width: 37.5em) { @content(); }
-}
-.b(mobile; @content) {
-    @media (max-width: 767px) { @content(); }
-}
-.b(tiny; @content) {
-    @media (max-width: 320px) { @content(); }
-}
-.b(mobile-menu; @content) {
-    @media (max-width: 1065.98px) { @content(); }
+    @media (min-width: 70em) { @content();
+    }
 }
 
+.b(laptop; @content) {
+    @media (max-width: 1350px) { @content();
+    }
+}
+
+.b(tablet; @content) {
+    @media (max-width: 1023px) { @content();
+    }
+}
+
+.b(phablet; @content) {
+    @media (min-width: 37.5em) { @content();
+    }
+}
+
+.b(mobile; @content) {
+    @media (max-width: 767px) { @content();
+    }
+}
+
+.b(tiny; @content) {
+    @media (max-width: 320px) { @content();
+    }
+}
+
+.b(mobile-menu; @content) {
+    @media (max-width: 1065.98px) { @content();
+    }
+}
 
 /* BOOTSTRAP GRID ============================================================ */
 
 .xl(@content) {
-    @media (max-width: 1399.98px) { @content(); }
+    @media (max-width: 1399.98px) { @content();
+    }
 }
 
 // Large devices (desktops, 992px and up)
 .lg(@content) {
-    @media (max-width: 1199.98px) { @content(); }
+    @media (max-width: 1199.98px) { @content();
+    }
 }
 
 // Medium devices (tablets, 768px and up)
 .md(@content) {
-    @media (max-width: 991.98px) { @content(); }
+    @media (max-width: 991.98px) { @content();
+    }
 }
 
 // Small devices (landscape phones, 576px and up)
 .sm(@content) {
-    @media (max-width: 767.98px)  { @content(); }
+    @media (max-width: 767.98px) { @content();
+    }
 }
 
 // Extra small devices (portrait phones, less than 576px)
 .xs(@content) {
-    @media (max-width: 575.98px)  { @content(); }
+    @media (max-width: 575.98px) { @content();
+    }
 }

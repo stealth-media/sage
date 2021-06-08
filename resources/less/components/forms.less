@@ -3,7 +3,7 @@
 /***********************************************************************/
 textarea, input, button { outline: none !important; }
 
-::-webkit-input-placeholder, ::-moz-placeholder, :-ms-input-placeholder,:-moz-placeholder { /* Chrome/Opera/Safari */
+::-webkit-input-placeholder, ::-moz-placeholder, :-ms-input-placeholder, :-moz-placeholder { /* Chrome/Opera/Safari */
     color: @input-placeholder-color; // edit variable.less
 }
 
@@ -80,4 +80,10 @@ input[type="checkbox"], input[type="radio"] {
     width: 20px;
     margin-left: -30px;
     margin-top: 0px;
+}
+
+input[type="file"] {
+    padding: 5px;
+    height: auto;
+    line-height: 22px;
 }

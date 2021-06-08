@@ -1,8 +1,8 @@
-<nav class="mobile-menu-panel mobile" id="mobile-menu-slide">
+<nav class="mobile-menu mobile js__mobile-menu-slide">
     <div id="site-navigation">
-        <div id="site-menu" class="text-center" role="navigation" itemscope itemtype="https://schema.org/SiteNavigationElement">
+        <div class="mobile-menu__site-menu text-center" role="navigation" itemscope itemtype="https://schema.org/SiteNavigationElement">
             @if (has_nav_menu('mobile'))
-                {!! wp_nav_menu(['theme_location' => 'mobile', 'menu_id' => 'mobile-menu', 'depth' => 2]) !!}
+                {!! wp_nav_menu(['theme_location' => 'mobile', 'menu_id' => 'mobile-menu', 'depth' => 3]) !!}
             @endif
             <ul class="social-list">
                 <li class="social-item">
@@ -33,7 +33,7 @@
             </ul>
         </div>
     </div>
-    <div class="menu-cta-button-container">
-        <a href="/web-design-contact/" class="btn btn-primary stealth-swipe">Book My Consultation</a>
+    <div class="mobile-menu__cta-button-container">
+        <a href="/contact" class="btn btn--primary">Free Demo</a>
     </div>
 </nav>

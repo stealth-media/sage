@@ -21,6 +21,12 @@ button:focus {outline: 0 !important;}
     border-radius: 0px;
     padding: 0px 15px;
     .transition();
+    .appearance();
+
+    &:hover, &:active, &:not(:disabled):not(.disabled):active {
+        outline: 0;
+        cursor: pointer;
+    }
 }
 
 .btn--icon-right {

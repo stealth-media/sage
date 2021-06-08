@@ -4,8 +4,8 @@
 .pagination {
     display: block;
     float: none;
-    margin: @baseline*3 auto 0 auto;
-    .font-size(14);
+    margin: @baseline*4 auto 0 auto;
+    .font-size(18);
     text-transform: uppercase;
 
     .page-numbers {
@@ -17,22 +17,29 @@
         text-align: center;
         line-height: 40px;
         color: @secondary-color;
+        font-weight: @weight-bold;
         background-color: transparent;
-        border: 1px solid @text-color-light;
-        .appearance;
+        border: none;
+        .border-radius();
+        .appearance();
+        .transition();
 
         &:hover {
-            color: @primary-color;
-            border-color: @primary-color;
+            color: @secondary-color-light;
             background-color: @white;
             cursor: pointer;
-            .box-shadow();
+            .box-shadow-secondary();
+        }
+
+        &.next, &.prev {
+            .gradient();
+            color: @white;
+            min-width: 60px;
         }
     }
 
     .current {
-        color: @primary-color;
-        border-color: @primary-color;
-        background-color: @white;
+        color: @white;
+        background-color: @secondary-color;
     }
 }

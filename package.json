@@ -45,7 +45,6 @@
         "vue-template-compiler": "^2.6.12"
     },
     "dependencies": {
-        "@fortawesome/fontawesome-free": "^5.15.3",
         "jquery": "^3.5.1",
         "slideout": "^1.0.1"
     },
