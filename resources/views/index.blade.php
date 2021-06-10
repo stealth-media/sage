@@ -28,7 +28,6 @@
                     </div>
                     <a href="{{ get_the_permalink() }}" class="btn btn--read-more">Read more</a>
                 </div>
-            @endif
         @endwhile
 
         <!-- Pagination -->
