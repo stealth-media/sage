@@ -17,18 +17,20 @@
 
  If using less, start with editing the `variables.less` file. 
 
-
+<br><br>
 ## Development 
 - `yarn start` — Compile assets when file changes are made, start Browsersync session
 - `yarn build` — Compile and optimize the files in your assets directory
 - `yarn build:production` — Compile assets for production
 
+<br><br>
 
 ## Wordpress set up
 - Edit `app/setup.php` to enable or disable theme features, setup navigation menus, post thumbnail sizes, and sidebars.
 - Add custom filters to `app/filters.php`
 - Add custom helper functions to `app/helpers.php`
 
+<br><br>
 
 ## HTML and Blade Templates
 - This Boilerplate has removed the original Sage code from `index.php`.
@@ -77,6 +79,7 @@ Example: We can set my-component's `$foo` variable as `$bar`
     @endphp
     ```
   - Note: we noticed that sometimes `@php` does not work. use `<?php ?>` instead if that's the case
+<br><br>
 
 ## Advanced Custom Fields Pro
 - We commonly use Advanced Custom Fields Pro. Fields can be grabbed easily using this syntax `@php($foo = get_field('foo'))`
@@ -93,12 +96,14 @@ Example:
         @endforeach
     @endif
     
+<br><br>
 
 ## Components Library
 - A library of components containing html, js, css, and php can be cloned into your `[THEME_ROOT]/resources/` directory. These can be easily copied and pasted in your project.
     - `git clone git@github.com:stealth-media/component_library.git`
 - #### ** Please delete the `resources/components_library` when project is complete. **
 
+<br><br>
 
 ## JS
 - Use `resources/scripts/app.js` for main js scripts. 
@@ -109,6 +114,7 @@ import Slideout from 'slideout';
 ```
 - jQuery is supported out of the box
 
+<br><br>
 
 ## Grid & Bootstrap
 https://getbootstrap.com/docs/4.5/layout/grid/
@@ -125,7 +131,8 @@ https://getbootstrap.com/docs/4.5/layout/grid/
     }
     ```
   
-  
+  <br><br>
+
 ## Menus
 - This Boilerplate includes a prebuilt Nav and Mega Nav
     - Find HTML @ `resources/views/partials/nav.blade.php` and `resources/views/partials/mega-nav.blade.php`. Include the nav you are using above `#panel` in `resources/layouts/header.blade.php`
@@ -137,7 +144,8 @@ https://getbootstrap.com/docs/4.5/layout/grid/
     - CSS @ `resources/less/layouts/mobile-menu.less`
     - JS to handle slide out and nav buttons @ `resources/scripts/app.js` `mobileMenu()`
     - Note: When the mobile menu is activated, `#panel` will slide. If you have `position: fixed;` elements outside of `#panel` ie. the nav, be sure to add the class `.fixed-to-panel`. This will slide your fixed elements with the panel.
-    
+    <br><br>
+
 ## Scroll to animations
 - This Boilerplate includes ready to use scroll to animations
 - To use a scroll to animation, add the class `.animation-element` to an element you want to trigger a scroll to animation on. Once this element is in view, it will trigger the animation for itself and it's children. 
@@ -174,6 +182,7 @@ https://getbootstrap.com/docs/4.5/layout/grid/
   
 - You can find the javascript that controls the triggering of these animations at `resources/scripts/app.js` `animateOnScroll()`
   
+<br><br>
 
 ## Requirements
 
