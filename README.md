@@ -95,7 +95,8 @@ Example:
     
 
 ### Components Library
-- A library of components containing html, js, css, and php can be found in `resources/components_library`. These can be easily copied and pasted in your project.
+- A library of components containing html, js, css, and php can be cloned into your `[THEME_ROOT]/resources/` directory. These can be easily copied and pasted in your project.
+    - `git clone git@github.com:stealth-media/component_library.git`
 - #### ** Please delete the `resources/components_library` when project is complete. **
 
 
@@ -218,7 +219,6 @@ themes/sage/                # → Root of your Sage based theme
 ├── node_modules/           # → Node.js packages (never edit)
 ├── package.json            # → Node.js dependencies and scripts
 ├── resources/              # → Theme assets and templates
-│   ├── components_library/ # → Component Library. Please delete before launch
 │   ├── fonts/              # → Theme fonts
 │       ├── @fortawesome/   # → Fontawesome fonts 
 │   ├── images/             # → Theme images
