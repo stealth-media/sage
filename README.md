@@ -24,14 +24,12 @@
 - `yarn build:production` — Compile assets for production
 
 <br><br>
-
 ## Wordpress set up
 - Edit `app/setup.php` to enable or disable theme features, setup navigation menus, post thumbnail sizes, and sidebars.
 - Add custom filters to `app/filters.php`
 - Add custom helper functions to `app/helpers.php`
 
 <br><br>
-
 ## HTML and Blade Templates
 - This Boilerplate has removed the original Sage code from `index.php`.
     - You can find the primary layout in `resources/views/layouts/app.blade.php`
@@ -97,14 +95,12 @@ Example:
     @endif
     
 <br><br>
-
 ## Components Library
 - A library of components containing html, js, css, and php can be cloned into your `[THEME_ROOT]/resources/` directory. These can be easily copied and pasted in your project.
     - `git clone git@github.com:stealth-media/component_library.git`
 - #### ** Please delete the `resources/components_library` when project is complete. **
 
 <br><br>
-
 ## JS
 - Use `resources/scripts/app.js` for main js scripts. 
 - Find JavaScript snippets @ `resources/component_library/snippets.js`
@@ -115,7 +111,6 @@ import Slideout from 'slideout';
 - jQuery is supported out of the box
 
 <br><br>
-
 ## Grid & Bootstrap
 https://getbootstrap.com/docs/4.5/layout/grid/
 - The bootstrap grid is applied and can be found at `resources/less/common/bootstrap/grid.less`. To enable bootstrap css, uncomment "bootstrap.less" from `app.less`
@@ -131,8 +126,7 @@ https://getbootstrap.com/docs/4.5/layout/grid/
     }
     ```
   
-  <br><br>
-
+<br><br>
 ## Menus
 - This Boilerplate includes a prebuilt Nav and Mega Nav
     - Find HTML @ `resources/views/partials/nav.blade.php` and `resources/views/partials/mega-nav.blade.php`. Include the nav you are using above `#panel` in `resources/layouts/header.blade.php`
@@ -183,7 +177,6 @@ https://getbootstrap.com/docs/4.5/layout/grid/
 - You can find the javascript that controls the triggering of these animations at `resources/scripts/app.js` `animateOnScroll()`
   
 <br><br>
-
 ## Requirements
 
 Make sure all dependencies have been installed before moving on:
