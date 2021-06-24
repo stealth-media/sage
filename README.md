@@ -6,9 +6,9 @@
   <a href="https://roots.io">Official Website</a> | <a href="https://roots.io/docs/sage/">Documentation</a>
 </p>
 
-## Stealth Boilerplate Notes
+# Stealth Boilerplate Notes
 
-### Getting Started
+## Getting Started
 1. Run `composer install` from the root of the theme
 2. If you do not have yarn, install yarn by running `npm install --global yarn`
 3. Once you have yarn, run `yarn` from the theme directory to install dependencies
@@ -18,19 +18,19 @@
  If using less, start with editing the `variables.less` file. 
 
 
-### Development 
+## Development 
 - `yarn start` — Compile assets when file changes are made, start Browsersync session
 - `yarn build` — Compile and optimize the files in your assets directory
 - `yarn build:production` — Compile assets for production
 
 
-### Wordpress set up
+## Wordpress set up
 - Edit `app/setup.php` to enable or disable theme features, setup navigation menus, post thumbnail sizes, and sidebars.
 - Add custom filters to `app/filters.php`
 - Add custom helper functions to `app/helpers.php`
 
 
-### HTML and Blade Templates
+## HTML and Blade Templates
 - This Boilerplate has removed the original Sage code from `index.php`.
     - You can find the primary layout in `resources/views/layouts/app.blade.php`
     - You can find the `<head>` in `resources/views/layouts/header.blade.php`
@@ -78,7 +78,7 @@ Example: We can set my-component's `$foo` variable as `$bar`
     ```
   - Note: we noticed that sometimes `@php` does not work. use `<?php ?>` instead if that's the case
 
-### Advanced Custom Fields Pro
+## Advanced Custom Fields Pro
 - We commonly use Advanced Custom Fields Pro. Fields can be grabbed easily using this syntax `@php($foo = get_field('foo'))`
 - To see the contents / array of the above `$foo` you can use `@dd()` ie. `@dd($foo)`. This will print the `$foo` values to the page.
 
@@ -94,13 +94,13 @@ Example:
     @endif
     
 
-### Components Library
+## Components Library
 - A library of components containing html, js, css, and php can be cloned into your `[THEME_ROOT]/resources/` directory. These can be easily copied and pasted in your project.
     - `git clone git@github.com:stealth-media/component_library.git`
 - #### ** Please delete the `resources/components_library` when project is complete. **
 
 
-### JS
+## JS
 - Use `resources/scripts/app.js` for main js scripts. 
 - Find JavaScript snippets @ `resources/component_library/snippets.js`
 - When installing new scripts with npm be sure to include the package at the top of `resources/scripts/app.js`. ie `npm install slideout`
@@ -110,7 +110,7 @@ import Slideout from 'slideout';
 - jQuery is supported out of the box
 
 
-### Grid & Bootstrap
+## Grid & Bootstrap
 https://getbootstrap.com/docs/4.5/layout/grid/
 - The bootstrap grid is applied and can be found at `resources/less/common/bootstrap/grid.less`. To enable bootstrap css, uncomment "bootstrap.less" from `app.less`
 - See `resources/less/common/mixins.less` for breakpoint mixins. ie. `.lg()`, `.md()`, `.sm()`, etc. These breakpoints mixins can be used to apply media query styling at to correct grid breakpoints. Breakpoint dimensions are written in comments of mixins
@@ -126,7 +126,7 @@ https://getbootstrap.com/docs/4.5/layout/grid/
     ```
   
   
-### Menus
+## Menus
 - This Boilerplate includes a prebuilt Nav and Mega Nav
     - Find HTML @ `resources/views/partials/nav.blade.php` and `resources/views/partials/mega-nav.blade.php`. Include the nav you are using above `#panel` in `resources/layouts/header.blade.php`
     - Find CSS @ `resources/less/header.less`
@@ -138,7 +138,7 @@ https://getbootstrap.com/docs/4.5/layout/grid/
     - JS to handle slide out and nav buttons @ `resources/scripts/app.js` `mobileMenu()`
     - Note: When the mobile menu is activated, `#panel` will slide. If you have `position: fixed;` elements outside of `#panel` ie. the nav, be sure to add the class `.fixed-to-panel`. This will slide your fixed elements with the panel.
     
-### Scroll to animations
+## Scroll to animations
 - This Boilerplate includes ready to use scroll to animations
 - To use a scroll to animation, add the class `.animation-element` to an element you want to trigger a scroll to animation on. Once this element is in view, it will trigger the animation for itself and it's children. 
 - You can find a library of animations in `resources/less/common/animations.less`
@@ -160,7 +160,7 @@ https://getbootstrap.com/docs/4.5/layout/grid/
    <div>
     ```
   <small>Note: you do not need `animation-element` on every element you want to animate. `.animation-element` is just the element that triggers the animations once it's in view for itself and it's children.</small>
-  
+  #### Delays
   You may not want all children to animate at the same time. You can delay their animation by using the `.aniamtion-delay-#` class (see `animations.less` for list of animation delays)
   
   Example:
