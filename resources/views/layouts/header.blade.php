@@ -30,8 +30,7 @@
 @include('partials.page-loader')
 
 <!-- MOBILE NAV -->
-    @include('partials.mobile-menu')
+    @include('Users.Brent.Documents.Sites.Component Library.mobile_menu.mobile-menu')
 
     @include('partials.nav')
     {{--        @include('partials.mega-nav')--}}
-    <main id="panel"><!-- Needed for mobile menu. This is what slides when you click mobile menu button -->

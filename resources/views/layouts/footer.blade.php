@@ -9,7 +9,6 @@
         </a>
     </div>
 </footer>
-</div><!-- #panel end -->
 </div><!-- #app end -->
 
 @php(do_action('get_footer'))

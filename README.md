@@ -226,7 +226,6 @@ themes/sage/                # → Root of your Sage based theme
 │   ├── images/             # → Theme images
 │   ├── scripts/            # → Theme javascript
 │       ├── app.js/         # → Main js file. 
-│       ├── snippets.js/    # → Library of js snippets that can be copied and used in app.js
 │   ├── less/               # → Theme less styles
 │       ├── common/         # → Commonly used less styles, not particular to a component or page
 │       ├── components/     # → Component Less style. used in sync with view/components
